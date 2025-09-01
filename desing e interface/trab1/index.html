@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trabalho 1 — Página HTML5 Semântica</title>
+  <meta name="description" content="Página HTML5 padrão com tags semânticas, listas, tabela, imagens, formulário e vídeo.">
+</head>
+<body>
+  <header>
+    <h1>Exemplo de Página HTML5 Semântica</h1>
+    <p>
+      Este é um pequeno <i>exemplo</i> de estrutura semântica em HTML5 com elementos em <b>destaque</b>.
+    </p>
+  </header>
+
+  <nav aria-label="Menu principal">
+    <ul>
+      <li>Menu</li>
+      <li>Principal</li>
+      <li>Produtos</li>
+      <li>Serviços</li>
+      <li>Sobre</li>
+    </ul>
+  </nav>
+
+  <main>
+    <section aria-labelledby="lista-itens">
+      <h2 id="lista-itens">Lista encadeada</h2>
+      <!-- Lista numerada com sublistas em marcadores (exatamente como solicitado) -->
+      <ol>
+        <li>Frutas
+          <ul>
+            <li>Banana</li>
+            <li>Maça</li>
+            <li>Abacate</li>
+          </ul>
+        </li>
+        <li>Legumes
+          <ul>
+            <li>Cebola</li>
+            <li>Pimentão</li>
+          </ul>
+        </li>
+        <li>Cereais
+          <ul>
+            <li>Arroz</li>
+            <li>feijão</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="tabela-lucro">
+      <h2 id="tabela-lucro">Tabela — Lucro por mês</h2>
+      <figure>
+        <figcaption class="sr-only">Lucro por mês (Banana, Maça,Abacate, Cebola, Pimentão, Arroz, feijão)</figcaption>
+        <table>
+          <caption>Lucro por mês</caption>
+          <thead>
+            <tr>
+              <th scope="col">Mês</th>
+              <th scope="col" colspan="3">Frutas</th>
+              <th scope="col" colspan="2">Legumes</th>
+              <th scope="col" colspan="2">Cereais</th>
+            </tr>
+            <tr>
+              <th scope="col" aria-hidden="true"></th>
+              <th scope="col">Banana</th>
+              <th scope="col">Maça</th>
+              <th scope="col">Abacate</th>
+              <th scope="col">Cebola</th>
+              <th scope="col">Pimentão</th>
+              <th scope="col">Arroz</th>
+              <th scope="col">feijão</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Janeiro</th>
+              <td>100</td>
+              <td>50</td>
+              <td>125</td>
+              <td>155</td>
+              <td>100</td>
+              <td>50</td>
+              <td>125</td>
+            </tr>
+            <tr>
+              <th scope="row">Fevereiro</th>
+              <td>120</td>
+              <td>100</td>
+              <td>75</td>
+              <td>105</td>
+              <td>100</td>
+              <td>50</td>
+              <td>125</td>
+            </tr>
+            <tr>
+              <th scope="row">Março</th>
+              <td>120</td>
+              <td>150</td>
+              <td>120</td>
+              <td>110</td>
+              <td>100</td>
+              <td>50</td>
+              <td>125</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>340</td>
+              <td>300</td>
+              <td>320</td>
+              <td>370</td>
+              <td>300</td>
+              <td>150</td>
+              <td>375</td>
+            </tr>
+          </tfoot>
+        </table>
+      </figure>
+    </section>
+
+    <h2>Imagens</h2>
+
+<img src="img/images.png" alt="logo IFRS" width="400" height="400">
+
+<img src="img/frutas-legumes-cereais-frescos.png" 
+     alt="Frutas, legumes e cereais" 
+     width="400" height="400">
+
+
+    <section aria-labelledby="formulario">
+      <h2 id="formulario">Formulário de Contato</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Envie uma mensagem</legend>
+
+          <div>
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div>
+            <label for="tel">Telefone</label>
+            <input type="tel" id="tel" name="tel" placeholder="(99) 99999-9999">
+          </div>
+
+          <div>
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto">
+              <option value="duvida">Dúvida</option>
+              <option value="orcamento">Orçamento</option>
+              <option value="suporte">Suporte</option>
+            </select>
+          </div>
+
+          <div>
+            <span>Preferência de contato</span>
+            <div>
+              <input type="radio" id="contato-email" name="preferencia" value="email" checked>
+              <label for="contato-email">E-mail</label>
+            </div>
+            <div>
+              <input type="radio" id="contato-telefone" name="preferencia" value="telefone">
+              <label for="contato-telefone">Telefone</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="mensagem" rows="5" cols="30"></textarea>
+          </div>
+
+          <div>
+            <input type="checkbox" id="aceite" name="aceite" required>
+            <label for="aceite">Confirmo que li e aceito os termos.</label>
+          </div>
+
+          <div>
+            <button type="submit">Enviar</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="video">
+      <h2 id="video">Vídeo</h2>
+      <div>
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/G2Kyg4S_Fdw" 
+        style="border:0;" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+</iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      FROZEN Hortifruti Ltda.<br>
+      Rua Doutor Luis Amaro Faral, 99 — Parque Sao Pedro BR>
+      Porto Alegre — RS — 96216-210<br>
+      CNPJ: 00.000.000/0001-00
+    </address>
+  </footer>
+
+</body>
+</html>
